@@ -36,7 +36,7 @@ namespace OrnekProje.Controllers
             var isim = TempData ["akif"];
             return View();
         }
-        //ViewResult: view dosyasını render etmemizi sağlar
+        //ViewResult: view dosyasını render etmemizi sağlar.
         //public ViewResult GetProducts()
         //{
         //    ViewResult view = View();
