@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrnekProje.Model;
+using OrnekProje.Model.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,34 @@ namespace OrnekProje.Controllers
 {
     public class ProductController : Controller
     {
+        public IActionResult GetPro()
+        {
+            Product pr = new Product()
+            {
+                ID = 1,
+                ProductName = "a product",
+                Quantity = 15
+            };
+
+            User us = new User()
+            {
+                ID = 1,
+                Name = "akif",
+                LastName = "şanver"
+            };
+            //UserProduct up = new UserProduct()
+            //{
+            //    Product = pr,
+            //    User = us
+            //};
+            ////ilgili viewa gönderdik
+            //return View(up);
+
+            var product = (pr, us);
+            return View(product);
+        }
         public IActionResult Index()
         {
-
             var products = new List<Product>()
             {
 
@@ -29,7 +55,7 @@ namespace OrnekProje.Controllers
             //ViewData ["urunler"] = products;
             //tempdata actionlar arası veri taşıma kontrolu sağlar
             TempData ["akif"] = 10;
-            return RedirectToAction("Index2","Product");
+            return RedirectToAction("Index2", "Product");
         }
         public IActionResult Index2()
         {
