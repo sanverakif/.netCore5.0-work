@@ -1,0 +1,31 @@
+﻿asp.net Web uygulamaları geliştirme mimarisidir.
+
+asp.net core open sourcedir. geliştirilmeye açıktır. 
+request: client üzerinde userin yaptığı istektir. request içerisinde hangi adrese ip domaine istek gönderildiği bilgisi tutulur.
+response: sunucu tarafından cliente dönülen cevaptır.
+
+Http Protokolu: Client ile server arasındaki iletişimi sağlar.
+
+
+API: Uygulamalar arasında iletişim kurabilen arayüzdür. Client ve server arasındaki iletişimi sağlar.
+
+MVC
+Model: işlenen veriyi temsil eden katmandır. db işlemleri yapılır.efcore, .net, repository, db işlemleri. 
+View:  veriyi görselleştiren sunum katmandır.
+Razor: html içinde c# kodları yazmamızı sağlar.
+controller:  gelene requestleri karşılıcak  ve içeriğe göre model işlemlerini yapıcak olan sınıf katmandır. servisleri,veritabanını çalıştırıp sorgular.
+gelen talebe göre modeli gider ve ister. modelda veriyi çekip verir.
+
+MCV PIPELINE: mvc çalışma mantığı
+
+
+Program.cs: dahili sunucuyu ayağa kaldırır. 
+Startup: web uygulamasında konfigurasyonların yapıldığı yerdir.
+Configure services: uygulamada kullanılıcak servislerin, modullerin eklendiği konfigure edildiği metottur. Mvc, asp.netcoreda modul olarak gelmiştir.
+end
+Servis: Projeye dahil etmek istediğimiz paketler, sınıflar, kutuphalerer vs.
+Configure : uygulamada kullanılıcak middleware ara katmanları yazılımları çağırırız
+
+appsettings.json: kullanılması gereken metinsel statik değerler kod içerisine yerleştirilmez. 1 den fazla yerde kullanılıcaksa tek yerde tanımlanır 
+
+Mimarisel

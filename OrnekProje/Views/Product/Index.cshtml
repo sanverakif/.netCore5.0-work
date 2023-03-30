@@ -1,0 +1,24 @@
+﻿    <!--türü bildirdik-->
+@*@model List<OrnekProje.Model.Product>
+
+
+    <ul>
+    <!--bildirilen türe uygun şekilde data yakalanıyor.-->
+    -@foreach (var product in Model) {
+            <li>@product.ProductName</li>
+        }
+    </ul>*@
+
+<h3>viewbag</h3>
+<ul>
+    @foreach (var product in ViewBag.products as List<OrnekProje.Model.Product>) {
+        <li>@product.ProductName</li>
+    }
+</ul>
+
+<h3>viewdata</h3>
+<ul>
+    @foreach (var product in ViewData ["urunler"] as List<OrnekProje.Model.Product>) {
+        <li>@product.ProductName</li>
+}
+</ul>
