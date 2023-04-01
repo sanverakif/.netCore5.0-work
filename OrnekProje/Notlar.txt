@@ -28,4 +28,8 @@ Configure : uygulamada kullanılıcak middleware ara katmanları yazılımları 
 
 appsettings.json: kullanılması gereken metinsel statik değerler kod içerisine yerleştirilmez. 1 den fazla yerde kullanılıcaksa tek yerde tanımlanır 
 
-Mimarisel
+
+Razor: C# ile html kodlarının yazımını sağlar.
+
+UrlHelpers: Mvc uygulamalarında url oluşturmamızı sağlar. methodlar: action-actionlink-content-routeurl
+action: controller ve actiona ait url oluşturmamızı sağlar.

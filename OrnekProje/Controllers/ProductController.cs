@@ -10,6 +10,10 @@ namespace OrnekProje.Controllers
 {
     public class ProductController : Controller
     {
+        public IActionResult TagHelpers()
+        {
+            return View();
+        }
         public IActionResult GetPro()
         {
             Product pr = new Product()
@@ -47,7 +51,8 @@ namespace OrnekProje.Controllers
                 new Product{ID = 4,ProductName = "note",Quantity= 40}
              };
             //model bazlı çalışır. gönderilen modelin türünü viewa hangi türde olduğunu bildirmeliyiz.
-            //return View(products);
+            //ViewBag.products = products;
+            return View();
 
             //viewa gönderilen datayı dinamik şekilde tanımlanan değişkenle göndeririz
             //ViewBag.products = products;
