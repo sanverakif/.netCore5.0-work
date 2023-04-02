@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using OrnekProje.Model;
 using OrnekProje.Model.ViewModels;
 using System;
@@ -10,6 +11,37 @@ namespace OrnekProje.Controllers
 {
     public class ProductController : Controller
     {
+        public IActionResult GetProducts()
+        {
+            return View();
+        }
+        [HttpPost]
+        //1.gönderilen istek sonucunda gelen dataların hepsi actionlarda bulunan parametrelerden yakalanır.(string txtName, string txtQuantity)
+        //2.inputlerin nameleri ile postu karşılıcak olan actionda kullanmış parametrelerin tanımlanan classın propertyleri otomatik bağlanır. 
+        public IActionResult CreateProduct(Product product)
+        {
+            return View();
+        }
+        public IActionResult CreateProduct()
+        {
+            var product = new Product()
+            {
+                ProductName = "akif",
+                Quantity = 15
+            };
+            return View(product);
+        }
+        public IActionResult CreateProduct2()
+        {
+            return View();
+        }
+        [HttpPost]
+        // public IActionResult VeriAl(IFormCollection datas): form içindeki inputların name değerleri yakalanır. 
+        public IActionResult VeriAl(IFormCollection datas)
+        {
+            var value1 = datas["txtValue3"];
+            return View();
+        }
         public IActionResult TagHelpers()
         {
             return View();
@@ -52,7 +84,7 @@ namespace OrnekProje.Controllers
              };
             //model bazlı çalışır. gönderilen modelin türünü viewa hangi türde olduğunu bildirmeliyiz.
             //ViewBag.products = products;
-            return View();
+            //return View();
 
             //viewa gönderilen datayı dinamik şekilde tanımlanan değişkenle göndeririz
             //ViewBag.products = products;
@@ -80,16 +112,16 @@ namespace OrnekProje.Controllers
         //    return result;
         //}
         // clienta gelen isteğe göre json döndürmek istersek kullanırız
-        public JsonResult GetProducts()
-        {
-            JsonResult result = Json(new Product()
-            {
-                ID = 1,
-                ProductName = "tv",
-                Quantity = 5
-            });
-            return result;
-        }
+        //public JsonResult GetProducts()
+        //{
+        //    JsonResult result = Json(new Product()
+        //    {
+        //        ID = 1,
+        //        ProductName = "tv",
+        //        Quantity = 5
+        //    });
+        //    return result;
+        //}
         //metinsel değer döndürürüz
         public ContentResult ContentResult()
         {

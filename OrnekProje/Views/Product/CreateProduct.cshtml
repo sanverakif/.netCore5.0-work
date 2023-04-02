@@ -1,0 +1,11 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model OrnekProje.Model.Product
+<form asp-action="CreateProduct" asp-controller="Product" method="put">
+    <input type="text" asp-for="ProductName" placeholder="ProductName" />
+    <br />
+    <input type="number"  asp-for="Quantity" placeholder="Quantity" />
+    <br />
+    <button>Ürün ekle</button>
+</form>
+
+@*web uygulamalarında form tetiklendiğinde içerisindeki input değerleri hedef endpointe actiona gelir. *@

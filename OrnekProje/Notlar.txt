@@ -9,7 +9,7 @@ Http Protokolu: Client ile server arasındaki iletişimi sağlar.
 
 API: Uygulamalar arasında iletişim kurabilen arayüzdür. Client ve server arasındaki iletişimi sağlar.
 
-MVC
+MVC 
 Model: işlenen veriyi temsil eden katmandır. db işlemleri yapılır.efcore, .net, repository, db işlemleri. 
 View:  veriyi görselleştiren sunum katmandır.
 Razor: html içinde c# kodları yazmamızı sağlar.
