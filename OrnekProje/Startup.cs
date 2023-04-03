@@ -34,6 +34,8 @@ namespace OrnekProje
                 //{
                 //    await context.Response.WriteAsync("Hello World!");
                 //});
+                //endpoints.MapControllerRoute("Default", "{controller=Home}/{action/Index}/{?id}");
+                endpoints.MapControllerRoute("CustomRoute", "{controller=Home}/{action=Index}/{a}/{b}/{id}");
                 endpoints.MapDefaultControllerRoute();
             });
         }

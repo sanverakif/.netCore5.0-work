@@ -1,0 +1,11 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<button id="send">gönder</button>
+
+<script>
+    $("#send").click(() => {
+        $.post("https://localhost:5001/Product/AjaxGetData", { a: "a data", b: "b data" })
+    })
+</script>

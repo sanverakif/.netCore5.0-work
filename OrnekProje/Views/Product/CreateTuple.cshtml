@@ -1,0 +1,10 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model (OrnekProje.Model.Product, OrnekProje.Model.User)
+
+<form asp-action="CreateTuple" asp-controller="Product" method="post">
+    <input type="text" asp-for="Item1.ProductName" placeholder="ProductName" />
+    <input type="text" asp-for="Item2.Name" placeholder="Name" />
+    <button>gönder</button>
+</form>
+
+
