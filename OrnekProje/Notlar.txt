@@ -33,3 +33,10 @@ Razor: C# ile html kodlarının yazımını sağlar.
 
 UrlHelpers: Mvc uygulamalarında url oluşturmamızı sağlar. methodlar: action-actionlink-content-routeurl
 action: controller ve actiona ait url oluşturmamızı sağlar.
+
+Validation: Değerin içinde bulunduğu şartlara uygun olması.
+ModelMetadataType: Validasyonlar classta toplayıp attribute ile geçerli olmasını istediğimiz classı kullanırız.
+FluentValidation: Validasyon işlemlerini gerçekleştirmek için kullandığımız hazır kütüphanedir.
+
+RenderBody: Render edilen viewların layoutta hangi alana yerleşeceğini belirler. layoutta tanımlanmalıdır.
+RenderSection: Sayfada bize ek alan açıp kullanmamızı sağlar.

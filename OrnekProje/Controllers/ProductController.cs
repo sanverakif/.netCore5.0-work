@@ -28,13 +28,30 @@ namespace OrnekProje.Controllers
     }
     public class ProductController : Controller
     {
+        public IActionResult CreateValidation()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateValidation(Product model)
+        {
+            //ModelState: data şartlarını kontrol eder ve geriye sonuç döner
+            if (!ModelState.IsValid) {
+                //ViewBag.Message = ModelState.Values.FirstOrDefault(x => x.ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid).Errors [0].ErrorMessage;
+                //var m = ModelState.ToList();
+
+                var messages = ModelState.ToList();
+                return View(model);
+            }
+            return View();
+        }
         public IActionResult CreateTuple()
         {
             var tuple = (new Product(), new User());
             return View(tuple);
         }
         [HttpPost]
-        public IActionResult CreateTuple([Bind(Prefix = "Item1")] Product product, [Bind(Prefix = "Item2")] User user)
+        public IActionResult CreateTuplePost([Bind(Prefix = "Item1")] Product product, [Bind(Prefix = "Item2")] User user)
         {
             return View();
         }
